@@ -10,11 +10,21 @@ end
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
 vim.diagnostic.config({
-  virtual_text = true,
+  -- End-of-line virtual text is clipped when a diagnostic is wider than the
+  -- editor. Render the complete message as wrapped virtual lines instead.
+  virtual_text = false,
+  virtual_lines = {
+    overflow = "wrap",
+  },
   signs = true,
   underline = true,
   update_in_insert = false,
   severity_sort = true,
+  float = {
+    border = "rounded",
+    source = "if_many",
+    severity_sort = true,
+  },
 })
 
 local lsp_group = vim.api.nvim_create_augroup("ksnvim_lsp", { clear = true })
