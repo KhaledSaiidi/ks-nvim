@@ -1,0 +1,33 @@
+# Local Neovim runtime data
+.nvimlog
+*.swp
+*.swo
+*.swn
+*.un~
+.netrwhist
+shada/
+spell/
+
+# Local editor/project metadata
+.nvim/
+.vscode/
+.idea/
+
+# Codex/agent workspace metadata
+.agents/
+.codex/
+
+# OS and temporary files
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp
+
+# Local secrets and machine-specific overrides
+.env
+.env.*
+!.env.example
+*.local.lua
+
+# Keep the reproducible plugin lockfile tracked:
+# lazy-lock.json
