@@ -14,7 +14,15 @@ end
 
 local mini_ai_ok, mini_ai = pcall(require, "mini.ai")
 if mini_ai_ok then
-  mini_ai.setup({ n_lines = 500 })
+  mini_ai.setup({
+    n_lines = 500,
+    custom_textobjects = {
+      f = mini_ai.gen_spec.treesitter({
+        a = "@function.outer",
+        i = "@function.inner",
+      }),
+    },
+  })
 end
 
 local mini_surround_ok, mini_surround = pcall(require, "mini.surround")
